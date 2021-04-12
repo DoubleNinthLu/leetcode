@@ -1,24 +1,20 @@
 /**
- * @param {number[]} nums
+ * @param {number} n
  * @return {number}
  */
-var findMin = function (nums) {
-    let l = 0; r = nums.length - 1;
-    while (l < r) {
-        let m = Math.floor(l + (r - l) / 2);
-        if (nums[m] === nums[r]) {
-            r--;
-        } else {
-            if (nums[m] < nums[r]) {
-                r = m;
-            } else {
-                l = m + 1;
-            }
+var largestNumber = function (nums) {
+    nums.sort((a, b) => {
+        let astr = a.toString() + b.toString();
+        let bstr = b.toString() + a.toString();
+        if (astr > bstr) {
+            return -1;
         }
-    }
-
-    return nums[l];
+        if (astr < bstr) {
+            return 1;
+        }
+        return 0;
+    });
+    return nums.join("").trim("0");
 };
 
-
-console.log(findMin([2, 0, 1, 1, 1]));
+console.log(largestNumber([0, 0]))
