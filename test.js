@@ -1,20 +1,18 @@
 /**
- * @param {number} n
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
  * @return {number}
  */
-var largestNumber = function (nums) {
-    nums.sort((a, b) => {
-        let astr = a.toString() + b.toString();
-        let bstr = b.toString() + a.toString();
-        if (astr > bstr) {
-            return -1;
-        }
-        if (astr < bstr) {
-            return 1;
-        }
-        return 0;
-    });
-    return nums.join("").trim("0");
+var minDiffInBST = function(root) {
+    if (root.left === null) {
+        
+    }
+    
 };
-
-console.log(largestNumber([0, 0]))
